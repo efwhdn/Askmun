@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heads - Asık Veysel MUN 2026</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+
+      html, body {
+        height: auto !important;
+        min-height: auto !important;
+        overflow-y: auto !important;
+        background: linear-gradient(to bottom, #2100b5, #160078);
+        background-attachment: scroll;
+      }
+
+      .heads-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+        margin-top: -100px; /* önce 50px'ti, daha yukarı almak için düşürdük */
+      }
+
+
+    .head-card { 
+      background: rgba(1, 5, 105, 0.518);
+      border-radius:20px; 
+      padding:20px; 
+      width:220px; 
+      text-align:center; 
+      color:white; 
+      transition: 
+      transform 0.3s, 
+      background 0.3s; 
+      position:relative; }
+
+    .head-card img { 
+      width:100%; 
+      height:150px; 
+      border-radius:15px; 
+      object-fit:cover; 
+      margin-bottom:15px; }
+
+    .head-card h3 { margin:10px 0 5px; }
+    .head-card p { font-size:0.95em; color:#ddd; }
+    .head-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.2); }
+
+    @media (max-width:1200px){ .head-card{width:200px;} }
+    @media (max-width:800px){ .head-card{width:45%;} }
+    @media (max-width:500px){ .head-card{width:90%;} }
+  </style>
+</head>
+<body>
+  <!-- 🔹 Finisher Header Arka Plan -->
+  <div class="header finisher-header"></div>
+
+  <!-- 🔹 Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/1.png" alt="Logo">
+      <span>ASKMUN'26</span>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="committees.html">Committees</a></li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="heads.html" class="active">Heads</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="mailto:asikveyselmun@gmail.com">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="heads-section">
+    <h1 style="text-align:center; color:white; margin-top:140px;">Conference Heads</h1>
+    <p style="text-align:center; color:#ccc;">Our Heads are experienced coordinators who guide each committee:</p>
+
+    <div class="heads-container">
+      <div class="head-card">
+        <img src="img/7.png" alt="Emir Efe Hendan">
+        <h3>Emir Efe Hendan</h3>
+        <p>Owner</p>
+      </div>
+      <div class="head-card">
+        <img src="img/7.png" alt="Emir Efe Hendan">
+        <h3>Emir Efe Hendan</h3>
+        <p>Moderator</p>
+      </div>
+      <div class="head-card">
+        <img src="img/7.png" alt="Emir Efe Hendan">
+        <h3>Emir Efe Hendan</h3>
+        <p>Admin</p>
+      </div>
+      <div class="head-card">
+        <img src="img/7.png" alt="Emir Efe Hendan">
+        <h3>Emir Efe Hendan</h3>
+        <p>Director</p>
+      </div>
+      <div class="head-card">
+        <img src="img/7.png" alt="Emir Efe Hendan">
+        <h3>Emir Efe Hendan</h3>
+        <p>Staff</p>
+      </div>
+      <div class="head-card">
+        <img src="img/7.png" alt="Emir Efe Hendan">
+        <h3>Emir Efe Hendan</h3>
+        <p>Member</p>
+      </div>
+      <div class="head-card">
+        <img src="img/7.png" alt="Emir Efe Hendan">
+        <h3>Emir Efe Hendan</h3>
+        <p>Rookie</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Scripts -->
+  <script src="finisher-header.es5.min.js"></script>
+  <script class="finisher-header">
+    new FinisherHeader({
+      count: 10,
+      size: { min: 1300, max: 1500, pulse:0 },
+      speed: { x: {min:0.1,max:0.6}, y:{min:0.1,max:0.6} },
+      colors: { background: "#16002c", particles:["#393f4b","#2800dc","#2800dc","#000000","#160078"] },
+      blending: "overlay",
+      opacity: { center:0.5, edge:0.05 },
+      skew:0,
+      shapes:["c"]
+    });
+  </script>
+
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Committees - Asık Veysel MUN 2026</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  margin: 0;
+  overflow-y: auto;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+/* Committees Container */
+.committees-container {
+  max-width: 1100px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+}
+
+.committee-card {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* header’ın üstüne çıkar */
+  background-color: rgba(1, 5, 105, 0.518); /* daha opak */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.committee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.committee-image {
+  flex: 0 0 300px;
+}
+
+.committee-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.committee-info {
+  flex: 1;
+  padding: 25px;
+}
+
+.committee-info h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.committee-info p {
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 900px) {
+  .committee-card { flex-direction: column; text-align: center; }
+  .committee-image { flex: none; width: 100%; }
+  .committee-info { padding: 20px; }
+  .committee-info h2 { font-size: 1.5em; }
+}
+
+@media (max-width: 600px) {
+  .committees-container { margin-top: 100px; padding: 0 10px; }
+  .committee-card { border-radius: 12px; }
+  .committee-info p { font-size: 0.95rem; }
+}
+
+/* Hamburger ikon ve navbar */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width:800px) {
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    height: 100vh;
+    width: 60%;
+    background: #000f46c4;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    transition: right 0.3s ease;
+    z-index: 100;
+  }
+  .nav-links.active { right: 0; }
+  .hamburger { display: flex; }
+  .nav-links li { opacity: 0; transition: opacity 0.3s ease 0.2s; }
+  .nav-links.active li { opacity: 1; }
+}
+
+/* Finisher header */
+.header.finisher-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<!-- 🔹 Finisher Header -->
+<div class="header finisher-header"></div>
+
+<!-- 🔹 Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="img/1.png" alt="Logo">
+    <span>ASKMUN'26</span>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="committees.html" class="active">Committees</a></li>
+    <li><a href="teams.html">Teams</a></li>
+    <li><a href="heads.html">Heads</a></li>
+    <li><a href="location.html">Location</a></li>
+    <li><a href="mailto:asikveyselmun@gmail.com">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- 🔹 Committees Bölümü -->
+<section class="committees-container">
+  <div class="committee-card">
+    <div class="committee-image">
+      <img src="img/7.png" alt="Committee 1">
+    </div>
+    <div class="committee-info">
+      <h2>ÖRNEK</h2>
+      <p>Bu yazı örnek açıklamadır ve tasarım için önem arz etmektedir.</p>
+    </div>
+  </div>
+
+  <div class="committee-card">
+    <div class="committee-image">
+      <img src="img/7.png" alt="Committee 2">
+    </div>
+    <div class="committee-info">
+      <h2>ÖRNEK</h2>
+      <p>Bu yazı örnek açıklamadır ve tasarım için önem arz etmektedir.</p>
+    </div>
+  </div>
+
+  <div class="committee-card">
+    <div class="committee-image">
+      <img src="img/7.png" alt="Committee 3">
+    </div>
+    <div class="committee-info">
+      <h2>ÖRNEK</h2>
+      <p>Bu yazı örnek açıklamadır ve tasarım için önem arz etmektedir.</p>
+    </div>
+  </div>
+
+  <div class="committee-card">
+    <div class="committee-image">
+      <img src="img/7.png" alt="Committee 4">
+    </div>
+    <div class="committee-info">
+      <h2>ÖRNEK</h2>
+      <p>Bu yazı örnek açıklamadır ve tasarım için önem arz etmektedir.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 🔹 Hamburger Script -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('open');
+});
+</script>
+
+<!-- 🔹 Finisher Header Script -->
+<script src="finisher-header.es5.min.js"></script>
+<script class="finisher-header">
+new FinisherHeader({
+  "count": 10,
+  "size": { "min": 1300, "max": 1500, "pulse": 0 },
+  "speed": { "x": { "min": 0.1, "max": 0.6 }, "y": { "min": 0.1, "max": 0.6 } },
+  "colors": { "background": "#16002c", "particles": ["#393f4b","#2800dc","#2800dc","#000000","#160078"] },
+  "blending": "overlay",
+  "opacity": { "center": 0.5, "edge": 0.05 },
+  "skew": 0,
+  "shapes": ["c"]
+});
+</script>
+
+</body>
+</html>
