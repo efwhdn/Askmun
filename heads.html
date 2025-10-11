@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Heads - Asık Veysel MUN 2026</title>
   <link rel="stylesheet" href="style.css">
+   <!--------------------------------------------------------------------------------------------------------------------------------------------->
     <style>
-
       html, body {
         height: auto !important;
         min-height: auto !important;
@@ -20,7 +20,7 @@
         flex-wrap: wrap;
         gap: 25px;
         justify-content: center;
-        margin-top: -100px; /* önce 50px'ti, daha yukarı almak için düşürdük */
+        margin-top: -100px; 
       }
 
 
@@ -43,20 +43,36 @@
       object-fit:cover; 
       margin-bottom:15px; }
 
-    .head-card h3 { margin:10px 0 5px; }
-    .head-card p { font-size:0.95em; color:#ddd; }
-    .head-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.2); }
+    .head-card h3 { 
+      margin:10px 0 5px; 
+    }
 
-    @media (max-width:1200px){ .head-card{width:200px;} }
-    @media (max-width:800px){ .head-card{width:45%;} }
-    @media (max-width:500px){ .head-card{width:90%;} }
+    .head-card p { 
+      font-size:0.95em; 
+      color:#ddd; 
+    }
+
+    .head-card:hover { 
+      transform: translateY(-5px); 
+      background: rgba(255,255,255,0.2); 
+    }
+
+    @media (max-width:1200px){ 
+      .head-card{width:200px;} 
+    }
+    @media (max-width:800px){ 
+      .head-card{width:45%;} 
+    }
+    @media (max-width:500px){ 
+      .head-card{width:90%;} 
+    }
   </style>
+<!---------------------------------------------------------------------------------------------------------------------------------------------->
 </head>
 <body>
-  <!-- 🔹 Finisher Header Arka Plan -->
+
   <div class="header finisher-header"></div>
 
-  <!-- 🔹 Navbar -->
   <nav class="navbar">
     <div class="logo">
       <img src="img/1.png" alt="Logo">
@@ -120,8 +136,7 @@
       </div>
     </div>
   </section>
-
-  <!-- 🔹 Scripts -->
+ <!---------------------------------------------------------------------------------------------------------------------------------------------->
   <script src="finisher-header.es5.min.js"></script>
   <script class="finisher-header">
     new FinisherHeader({
@@ -134,10 +149,7 @@
       skew:0,
       shapes:["c"]
     });
-  </script>
 
-  <script>
-    // Hamburger
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -146,5 +158,6 @@
       hamburger.classList.toggle('open');
     });
   </script>
+ <!---------------------------------------------------------------------------------------------------------------------------------------------->
 </body>
 </html>
