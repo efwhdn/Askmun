@@ -181,13 +181,11 @@ footer {
   transition: opacity 0.3s ease;
 }
 
-/* 🔹 Açıkken görünür hale gelir */
 .modal.show {
   display: flex;
   animation: fadeIn 0.4s ease forwards;
 }
 
-/* 🔹 Modal içeriği */
 .modal-content {
   background: linear-gradient(145deg, #160078, #190088);
   color: white;
@@ -203,14 +201,12 @@ footer {
   position: relative;
 }
 
-/* 🔹 Başlık */
 .modal-content h2 {
   margin-bottom: 25px;
   font-size: 1.8rem;
   font-weight: 700;
 }
 
-/* 🔹 Butonlar */
 .modal-buttons {
   display: flex;
   flex-direction: column;
@@ -232,7 +228,6 @@ footer {
   transform: scale(1.05);
 }
 
-/* 🔹 Kapatma Tuşu */
 .close {
   position: absolute;
   top: 12px;
@@ -247,7 +242,6 @@ footer {
   color: #bbb;
 }
 
-/* 🔹 Animasyonlar */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -260,7 +254,6 @@ footer {
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* 🔹 Hamburger ikon */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -279,7 +272,6 @@ footer {
   transition: all 0.3s ease;
 }
 
-/* Hamburger X animasyonu */
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -292,8 +284,6 @@ footer {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
-/* 🔹 Responsive navbar */
 @media (max-width: 800px) {
   .nav-links {
     position: fixed;
@@ -327,7 +317,6 @@ footer {
     opacity: 1;
   }
 
-  /* Hero ve logo responsive */
 .hero h1 {
   font-size: 1.5rem;
 }
@@ -347,5 +336,4 @@ footer {
 }
 
 }
-
 
