@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teams - Asık Veysel MUN 2026</title>
 <link rel="stylesheet" href="style.css">
+<!---------------------------------------------------------------------------------------------------------------------------------------------->
 <style>
 body {
   margin: 0;
@@ -12,7 +13,6 @@ body {
   background: transparent;
 }
 
-/* 🔹 Başlık */
 h1.teams-title {
   text-align: center;
   margin-top: 140px;
@@ -21,7 +21,6 @@ h1.teams-title {
   color: white;
 }
 
-/* teams kapsayıcısı */
 .teams-container {
   width: 80%;
   max-width: 900px;
@@ -33,7 +32,6 @@ h1.teams-title {
   position: relative;
 }
 
-/* oklar */
 .arrow {
   background: transparent;
   border: none;
@@ -44,9 +42,11 @@ h1.teams-title {
   border-radius: 10px;
   transition: transform .15s ease;
 }
-.arrow:active { transform: scale(.96); }
 
-/* kart */
+.arrow:active { 
+  transform: scale(.96); 
+}
+
 .team-card {
   width: 100%;
   background: rgba(255,255,255,0.06);
@@ -60,7 +60,6 @@ h1.teams-title {
   overflow: hidden;
 }
 
-/* fotoğraf ve yazılar */
 .team-card img {
   width: 220px;
   height: 220px;
@@ -69,32 +68,70 @@ h1.teams-title {
   border: 3px solid rgba(255,255,255,0.12);
   flex-shrink: 0;
 }
-.team-info { color: white; text-align: left; }
-.team-info h2 { font-size: 26px; margin: 0 0 8px; }
-.team-info p { margin: 0; line-height: 1.6; opacity: 0.95; }
 
-/* animasyonlar */
+.team-info { 
+  color: white; 
+  text-align: left; 
+}
+
+.team-info h2 { 
+  font-size: 26px; 
+  margin: 0 0 8
+  px; 
+}
+.team-info p { 
+  margin: 0; 
+  line-height: 1.6; 
+  opacity: 0.95; 
+}
+
 @keyframes slideOutLeft { to { transform: translateX(-60px); opacity: 0; } }
 @keyframes slideOutRight { to { transform: translateX(60px); opacity: 0; } }
 @keyframes slideInFromRight { from { transform: translateX(60px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 @keyframes slideInFromLeft { from { transform: translateX(-60px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 
-.animate-out-left { animation: slideOutLeft .36s ease forwards; }
-.animate-out-right { animation: slideOutRight .36s ease forwards; }
-.animate-in-right { animation: slideInFromRight .36s ease forwards; }
-.animate-in-left { animation: slideInFromLeft .36s ease forwards; }
-
-/* responsive */
-@media (max-width:700px) {
-  .teams-container { width: 92%; gap: 10px; margin-top: 60px; margin-bottom: 100px; flex-direction: column; }
-  .team-card { flex-direction: column; padding: 18px; min-height: auto; }
-  .team-card img { width: 160px; height: 160px; }
-  .arrow { font-size: 34px; }
-  h1.teams-title { margin-top: 80px; } /* 140 -> 80 */
-  .teams-container { margin-top: 40px; margin-bottom: 80px; } /* 80 / 140 -> 40 / 80 */
+.animate-out-left { 
+  animation: slideOutLeft .36s ease forwards; 
+}
+.animate-out-right { 
+  animation: slideOutRight .36s ease forwards; 
+}
+.animate-in-right { 
+  animation: slideInFromRight .36s ease forwards; 
+}
+.animate-in-left { 
+  animation: slideInFromLeft .36s ease forwards; 
 }
 
-/* 🔹 Hamburger ikon ve navbar */
+@media (max-width:700px) {
+  .teams-container { 
+    width: 92%; 
+    gap: 10px; 
+    margin-top: 60px; 
+    margin-bottom: 100px; 
+    flex-direction: column; 
+  }
+  .team-card { 
+    flex-direction: column; 
+    padding: 18px; 
+    min-height: auto; 
+  }
+  .team-card img { 
+    width: 160px; 
+    height: 160px; 
+  }
+  .arrow { 
+    font-size: 34px; 
+  }
+  h1.teams-title {
+    margin-top: 80px; 
+  }
+  .teams-container { 
+    margin-top: 40px; 
+    margin-bottom: 80px; 
+  } 
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -132,18 +169,27 @@ h1.teams-title {
     transition: right 0.3s ease;
     z-index: 100;
   }
-  .nav-links.active { right: 0; }
-  .hamburger { display: flex; }
-  .nav-links li { opacity: 0; transition: opacity 0.3s ease 0.2s; }
-  .nav-links.active li { opacity: 1; }
+  .nav-links.active { 
+    right: 0; 
+  }
+  .hamburger { 
+    display: flex; 
+  }
+  .nav-links li { 
+    opacity: 0; 
+    transition: opacity 0.3s ease 0.2s; 
+  }
+  .nav-links.active li {
+    opacity: 1; 
+  }
 }
 </style>
+<!---------------------------------------------------------------------------------------------------------------------------------------------->
 </head>
 <body>
-  <!-- 🔹 Finisher Header -->
+
   <div class="header finisher-header"></div>
 
-  <!-- 🔹 Navbar -->
   <nav class="navbar">
     <div class="logo">
       <img src="img/1.png" alt="Logo">
@@ -177,8 +223,7 @@ h1.teams-title {
       <button class="arrow" id="next" aria-label="Sonraki Takım">&#10095;</button>
     </div>
   </section>
-
-  <!-- 🔹 Finisher Script -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------->
   <script src="finisher-header.es5.min.js"></script>
   <script class="finisher-header">
     new FinisherHeader({
@@ -194,7 +239,7 @@ h1.teams-title {
   </script>
 
   <script>
-    // Hamburger menü
+  
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
     hamburger.addEventListener('click', () => {
@@ -202,7 +247,6 @@ h1.teams-title {
       hamburger.classList.toggle('open');
     });
 
-    // Teams carousel
     (function(){
       const teams = [
         { img: "img/7.png", name: "ÖRNEK 1", desc: "Bu yazı örnek açıklamadır ve tasarım için önem arz etmektedir." },
@@ -251,5 +295,6 @@ h1.teams-title {
       document.addEventListener("keydown", (e) => { if(e.key==="ArrowLeft") prev.click(); if(e.key==="ArrowRight") next.click(); });
     })();
   </script>
+  <!---------------------------------------------------------------------------------------------------------------------------------------------->
 </body>
 </html>
