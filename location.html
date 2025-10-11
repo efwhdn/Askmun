@@ -6,11 +6,79 @@
   <title>Location - Asık Veysel MUN 2026</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<!---------------------------------------------------------------------------------------------------------------------------------------------->
+<style>
+    html, body {
+      height: 100%;
+      min-height: 100vh;
+      overflow: auto;
+    }
+
+    .map-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 100px 20px;
+      gap: 40px;
+      min-height: calc(100vh - 70px);
+      z-index: 1;
+      position: relative;
+    }
+
+    .map-title {
+      color: white;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .map-button {
+      background-color: #001a76;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+
+    .map-button:hover {
+      background-color: #131d40;
+    }
+
+    .map-photos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .map-photos img {
+      width: 250px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .map-title {
+        font-size: 1.8rem;
+      }
+      .map-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+      .map-photos img {
+        width: 180px;
+        height: 120px;
+      }
+    }
+  </style>
+  <!---------------------------------------------------------------------------------------------------------------------------------------------->
 <body>
-  <!-- 🔹 Finisher Header Arka Plan -->
+
   <div class="header finisher-header"></div>
 
-  <!-- 🔹 Navbar -->
   <nav class="navbar">
     <div class="logo">
       <img src="img/1.png" alt="Logo">
@@ -34,19 +102,17 @@
     </ul>
   </nav>
 
-  <!-- 🔹 Venue Section -->
-  <section class="venue-section">
-    <h1 class="venue-title">School Location</h1>
+  <section class="map-section">
+    <h1 class="map-title">School Location</h1>
     <a href="https://maps.app.goo.gl/qBu2w9hLNPGu8M5YA" target="_blank" class="map-button">Location</a>
-    <div class="venue-photos">
+    <div class="map-photos">
       <img src="img/7.png" alt="1">
       <img src="img/7.png" alt="2">
       <img src="img/7.png" alt="3">
       <img src="img/7.png" alt="4">
     </div>
   </section>
-
-  <!-- 🔹 Finisher Script -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------->
   <script src="finisher-header.es5.min.js" type="text/javascript"></script>
   <script class="finisher-header" type="text/javascript">
     new FinisherHeader({
@@ -64,7 +130,6 @@
     });
   </script>
 
-  <!-- 🔹 Hamburger Menu Script -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -74,75 +139,6 @@
       hamburger.classList.toggle('open');
     });
   </script>
-
-  <!-- 🔹 Venue Section Style (Inline) -->
-  <style>
-    html, body {
-      height: 100%;
-      min-height: 100vh;
-      overflow: auto;
-    }
-
-    .venue-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 100px 20px;
-      gap: 40px;
-      min-height: calc(100vh - 70px); /* navbar yüksekliğini çıkar */
-      z-index: 1;
-      position: relative;
-    }
-
-    .venue-title {
-      color: white;
-      font-size: 2.5rem;
-      text-align: center;
-    }
-
-    .map-button {
-      background-color: #001a76;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: background 0.3s;
-    }
-
-    .map-button:hover {
-      background-color: #131d40;
-    }
-
-    .venue-photos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .venue-photos img {
-      width: 250px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    /* 🔹 Responsive */
-    @media (max-width: 800px) {
-      .venue-title {
-        font-size: 1.8rem;
-      }
-      .map-button {
-        padding: 12px 25px;
-        font-size: 1rem;
-      }
-      .venue-photos img {
-        width: 180px;
-        height: 120px;
-      }
-    }
-  </style>
+<!---------------------------------------------------------------------------------------------------------------------------------------------->
 </body>
 </html>
