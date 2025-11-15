@@ -131,19 +131,34 @@ body {
   justify-content: center;
 }
 
-.btn {
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  padding: 10px 25px;
-  border-radius: 25px;
-  text-decoration: none;
+button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
   font-weight: 500;
-  transition: 0.3s;
+  color: #ffffff80;
+  text-shadow: none;
+  background: transparent;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
 }
 
-.btn:hover {
-  background: #131d40;
-  color: white;
+#btn:hover,:focus {
+  color: #ffffff;
+  background: #001987;
+  border: 1px solid #00325b;
+  text-shadow: 0 0 5px #001685bc,
+              0 0 10px #0055ff41,
+              0 0 20px #0012785d;
+  box-shadow: 0 0 5px #001190,
+              0 0 20px #001aff,
+              0 0 50px #002089,
+              0 0 100px #001255;
+  font-size: 16px;
+  border-color: transparent;
 }
 
 .primary {
