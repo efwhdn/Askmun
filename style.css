@@ -146,17 +146,18 @@ button {
   user-select: none;
 }
 
-#btn:hover,:focus {
+.hero-btn:hover, 
+.hero-btn:focus {
   color: #ffffff;
   background: #001987;
   border: 1px solid #00325b;
   text-shadow: 0 0 5px #001685bc,
-              0 0 10px #0055ff41,
-              0 0 20px #0012785d;
+           0 0 10px #0055ff41,
+           0 0 20px #0012785d;
   box-shadow: 0 0 5px #001190,
-              0 0 20px #001aff,
-              0 0 50px #002089,
-              0 0 100px #001255;
+           0 0 20px #001aff,
+           0 0 50px #002089,
+           0 0 100px #001255;
   font-size: 16px;
   border-color: transparent;
 }
