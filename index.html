@@ -266,7 +266,7 @@
 
   <script>
 const countdown = document.getElementById("countdown");
-const eventDate = new Date("Feb 20, 2026 00:00:00").getTime();
+const eventDate = new Date("Jan 19, 2026 00:00:00").getTime();
 
 const timer = setInterval(() => {
   const now = new Date().getTime();
@@ -274,7 +274,7 @@ const timer = setInterval(() => {
 
   if (distance < 0) {
     clearInterval(timer);
-    countdown.innerHTML = "Conference has started!";
+    countdown.innerHTML = "The event has started!";
     return;
   }
 
