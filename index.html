@@ -5,6 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asık Veysel MUN 2026</title>
   <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+      display: flex;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .modal-content {
+      background: linear-gradient(145deg, #100055, #190088);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      position: relative;
+      animation: popIn 0.4s ease forwards;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: rgba(255,255,255,0.6);
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
+      transition: 0.2s;
+    }
+
+    .close:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    .modal-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .position-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 15px;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .position-card:hover {
+      background: #2800dc;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(40, 0, 220, 0.4);
+    }
+
+    .content-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .price-info {
+      display: none;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 2px 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .price-row:last-child { border-bottom: none; }
+    .price-row span { color: #ffcc00; font-weight: bold; }
+
+    @media (min-width: 769px) {
+      .position-card:hover .btn-title { display: none; }
+      .position-card:hover .price-info { display: block; animation: fadeIn 0.3s ease; }
+    }
+    
+    .position-card.show-prices .btn-title { display: none; }
+    .position-card.show-prices .price-info { display: block; animation: fadeIn 0.3s ease; }
+
+  </style>
 </head>
 <body>
   <div class="header finisher-header" ></div>
@@ -38,45 +178,93 @@
     <h1>Asık Veysel MUN 2026</h1>
     <p>20–22 February 2026 </p>
     <div id="countdown"></div>
-
-  <button id="aboutBtn" class="hero-btn">
-    About Us
-  </button>
-  <button id="applyBtn" class="hero-btn">
-    Apply Now!
-  </button>
+    
+    <div class="buttons" style="display:flex; gap:15px; justify-content:center;">
+      <button id="aboutBtn" class="hero-btn">
+        About Us
+      </button>
+      <button id="applyBtn" class="hero-btn">
+        Apply Now!
+      </button>
+    </div>
+  </div>
 </section>
 
 <div id="applyModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
+    
     <h2>Positions</h2>
+    
     <div class="modal-buttons">
-      <a href="#" class="modal-btn">Delegate</a>
-      <a href="#" class="modal-btn">Press</a>
-      <a href="#" class="modal-btn">Admin</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBL7KeVQOByDV7bk3_svEH2v1gn-RbTx0bfVs602ob9MYQkw/viewform?usp=header" class="modal-btn position-card" onclick="handleMobileClick(event, this)">
+        <div class="content-wrapper">
+          <span class="btn-title">Delegate</span>
+          <div class="price-info">
+            <div class="price-row"><span>Early:</span> 1000₺</div>
+            <div class="price-row"><span>Regu:</span> 1050₺</div>
+            <div class="price-row"><span>Late:</span> 1100₺</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4jILWFLmb6A1wz_ooGTkcx5IWERu2n5VXO-Da1MIw_ME_mQ/viewform?usp=header" class="modal-btn position-card" onclick="handleMobileClick(event, this)">
+        <div class="content-wrapper">
+          <span class="btn-title">Delegation</span>
+          <div class="price-info">
+            <div class="price-row"><span>Early:</span> 950₺</div>
+            <div class="price-row"><span>Regu:</span> 1000₺</div>
+            <div class="price-row"><span>Late:</span> 1050₺</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScd22as9ziJjMpDH31Jn7GupCPbnN92iKIRfdqFJ5RurOJCNA/viewform?usp=header" class="modal-btn position-card" onclick="handleMobileClick(event, this)">
+        <div class="content-wrapper">
+          <span class="btn-title">Press</span>
+          <div class="price-info">
+            <div class="price-row"><span>Early:</span> 750₺</div>
+            <div class="price-row"><span>Regu:</span> 800₺</div>
+            <div class="price-row"><span>Late:</span> 850₺</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZ7j9s-_U2-B5Mjehq9F4_AiALmbZ03D8tMSk1-mfWtIVlLA/viewform?usp=header" class="modal-btn position-card" onclick="handleMobileClick(event, this)">
+        <div class="content-wrapper">
+          <span class="btn-title">Admin</span>
+          <div class="price-info">
+            <div class="price-row"><span>Early:</span> 750₺</div>
+            <div class="price-row"><span>Regu:</span> 800₺</div>
+            <div class="price-row"><span>Late:</span> 850₺</div>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>
 
+
   <script src="finisher-header.es5.min.js" type="text/javascript"></script>
   <script class="finisher-header" type="text/javascript">
-    new FinisherHeader({
-      "count": 10,
-      "size": { "min": 1300, "max": 1500, "pulse": 0 },
-      "speed": { "x": { "min": 0.1, "max": 0.6 }, "y": { "min": 0.1, "max": 0.6 } },
-      "colors": {
-        "background": "#16002c",
-        "particles": ["#393f4b", "#2800dc", "#2800dc", "#000000", "#160078"]
-      },
-      "blending": "overlay",
-      "opacity": { "center": 0.5, "edge": 0.05 },
-      "skew": 0,
-      "shapes": ["c"]
-    });</script>
+    try {
+      new FinisherHeader({
+        "count": 10,
+        "size": { "min": 1300, "max": 1500, "pulse": 0 },
+        "speed": { "x": { "min": 0.1, "max": 0.6 }, "y": { "min": 0.1, "max": 0.6 } },
+        "colors": {
+          "background": "#16002c",
+          "particles": ["#393f4b", "#2800dc", "#2800dc", "#000000", "#160078"]
+        },
+        "blending": "overlay",
+        "opacity": { "center": 0.5, "edge": 0.05 },
+        "skew": 0,
+        "shapes": ["c"]
+      });
+    } catch(e) { console.log("Finisher header script not loaded"); }
+  </script>
 
   <script>
-/* --- Geri Sayım Sayacı --- */
 const countdown = document.getElementById("countdown");
 const eventDate = new Date("Feb 20, 2026 00:00:00").getTime();
 
@@ -98,7 +286,6 @@ const timer = setInterval(() => {
   countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }, 1000);
 
-/* --- Modal ve Buton Fonksiyonları --- */
 document.addEventListener("DOMContentLoaded", () => {
   
   const modal = document.getElementById("applyModal");
@@ -133,13 +320,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-/* --- Hamburger Menü --- */
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.querySelector('.nav-links');
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('open');
+  if(hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  }
+</script>
+<script>
+  function handleMobileClick(event, element) {
+    if (window.innerWidth <= 768) {
+      
+      if (!element.classList.contains('show-prices')) {
+        event.preventDefault(); 
+        
+        document.querySelectorAll('.position-card').forEach(btn => {
+          btn.classList.remove('show-prices');
+        });
+
+        element.classList.add('show-prices');
+      }
+    }
+  }
+
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.position-card')) {
+      document.querySelectorAll('.position-card').forEach(btn => {
+        btn.classList.remove('show-prices');
+      });
+    }
   });
 </script>
   </body>
